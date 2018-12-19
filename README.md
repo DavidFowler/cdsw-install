@@ -12,21 +12,21 @@ Make sure you check those scripts in the `scripts` folder to configure how many 
 
 In the **Azure Portal**, create the IAM entity with permissions to access resources in your Azure Subscription.
 
-- Go to `Azure Active Directory > App Registration` and create an app of type `Web app / API`. The URL is not important.
-- Go to the app `Keys` section and create a new key. Save the secret key for later
+- Go to `Azure Active Directory > App Registrations` and create an app of type `Web app / API`. The URL is not important.
+- Go to the app `Settings > Keys` section and create a new key by filling in the; Description, Duration and Save. Make sure to save the secret key generated for later
 - Go to your `Subscription > IAM > Role assignment` and add `Owner` to the app you created.
 
 Get these IDs:
 
 - `Azure Subscription ID` = get it from the `Subscription` section.
-- `Azure Active Directory Tenant ID` = go to `Azure Active Directory > Properties`, and copy the `Director ID`.
-- `Azure Active Directory Client ID` = go to `Azure Active Directory > App Registration`, and copy the `Application ID`.
-- `Azure Active Directory Client Secret` = secret key you copied.
+- `Azure Active Directory Tenant ID` = go to `Azure Active Directory > Properties`, and copy the `Directory ID`.
+- `Azure Active Directory Client ID` = go to `Azure Active Directory > App Registrations`, and copy the `Application ID`.
+- `Azure Active Directory Client Secret` = application secret key you copied.
 
 ### STEPS TO CREATE CLOUDERA DIRECTOR
 
 - Go to the Azure Marketplace and search for `Cloudera Director`, then start the wizard.
-- Complete the wizard; example values are below. 
+- Complete the wizard; create a new resource group, example values are below. 
 - Finish the wizard and wait until deployment is completed. 
 - Go to the RG, and on both NSGs, open ports 80,7180-7189,8888.
 - Go to the RG, and `Convert to managed` each Availability Set.
